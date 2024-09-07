@@ -1,0 +1,12 @@
+<form style="margin-top: 200px; text-align: center; " #LoginForm="ngForm" (ngSubmit)="login(LoginForm.value)">
+    <label for="username">Username :- </label>
+    <input type="text" name="username" ngModel><br><br><br>
+    <label for="password">password:- </label>
+    <input type="password" name="password" ngModel><br><br><br>
+    <label for="role">Choose Your Role :-</label>
+    <select id="role" name="role" [(ngModel)]="role">
+        <option value="user_normal">user</option>
+        <option value="Admin">Admin</option>
+    </select><br> <br>
+    <button class="btn btn-primary" type="submit"> Login</button>
+</form>

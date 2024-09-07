@@ -1,0 +1,31 @@
+<div style="display: flex; width: 100%;">
+    <mat-card style="border: 1px solid red ;width: 100%;align-items: center; justify-content:center;  padding: 3px;">
+        <mat-card-header>
+            <mat-card-title> user:- {{obj?.user_name}} </mat-card-title>
+            <mat-card-title> Title:- {{obj?.Todo_title}} </mat-card-title>
+            <mat-card-subtitle> Description:- {{obj?.Todo_desc}} </mat-card-subtitle>
+            <mat-card-subtitle>Todo Status:-{{Status_f}} </mat-card-subtitle>
+
+        </mat-card-header>
+
+        <button class="btn btn-secondary" [hidden]="user=='user_normal' || role=='Admin' "
+            (click)="delete(obj?.Todo_title,obj?.user_name)">Delete</button>
+        <button class="btn btn-secondary" [hidden]="role=='user_normal'"
+            (click)="Approval( obj?.Todo_title, obj?.user_name)"
+            [hidden]="role=='user_normal' || ( Status_f=='Approved') "
+            style="background-color: lightgreen;">Accept</button>
+        <button class="btn btn-secondary" [hidden]="role=='user_normal'  "
+            (click)="disApproval(obj?.Todo_title, obj?.user_name)" style="background-color: green;">Dissaprove</button>
+
+    </mat-card>
+
+
+    <!-- todos= {
+    Abhijit: [],
+    Anmol: [],
+    Abdul: []
+   }
+
+   todos.abhijit -->
+
+</div>
